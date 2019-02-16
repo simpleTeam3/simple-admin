@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import personalRoutes from './personal';
 import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
@@ -11,5 +12,5 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld
     }
-  ]
+  ].concat(personalRoutes)
 })
