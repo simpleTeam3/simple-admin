@@ -5,7 +5,13 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-        count: 1
+        count: 1,
+        httpLogs: []
+    },
+    mutations: {
+        recordHttp(state, obj) {
+            state.httpLogs.push(obj);
+        }
     }
 })
 
