@@ -1,16 +1,22 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import Router from 'vue-router'
 import personalRoutes from './personal';
-import HelloWorld from '@/components/HelloWorld'
+import HelloWorld from '~/components/HelloWorld'
+import LoginLayout from '~/layout/loginLayout';
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'loginLayout',
+      component: LoginLayout
+    },
+    {
+      path: '/login',
+      name: '登录',
+      component: LoginLayout
     }
   ].concat(personalRoutes)
 })
