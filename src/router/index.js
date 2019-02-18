@@ -1,22 +1,25 @@
 import Vue from 'vue';
 import Router from 'vue-router'
-import personalRoutes from './personal';
-import HelloWorld from '~/components/HelloWorld'
+
 import LoginLayout from '~/layout/loginLayout';
+import personalRoutes from './personal';
 
 Vue.use(Router);
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'loginLayout',
-      component: LoginLayout
-    },
-    {
-      path: '/login',
-      name: '登录',
-      component: LoginLayout
-    }
-  ].concat(personalRoutes)
+	routes: [
+		{
+			path: '/',
+			name: 'loginLayout',
+			redirect: '/login',
+			component: LoginLayout,
+			children: [
+				{
+					path: 'login',
+					component: () => import ('~/pages/login'),
+					name: '登陆'
+				}
+			]
+		}
+	].concat(personalRoutes)
 })

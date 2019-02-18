@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router';
 import store from './store';
+import '~/styles/index.scss';
 
 import Simple from 'simple-ui-for-vue';
 Vue.use(Simple);

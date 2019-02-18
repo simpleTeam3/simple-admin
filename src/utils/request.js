@@ -1,7 +1,7 @@
 import axios from 'axios';
 import store from '~/store';
 import { message } from 'simple-ui-for-vue';
-import { getToken } from '~/uils/getCookie';
+import { getToken } from '~/utils/getCookie';
 
 const apiDebug = true;
 
@@ -14,7 +14,7 @@ const service = axios.create({
 service.interceptors.request.use(config => {
 	//before request
 	config['token'] = getToken();
-	configp['timestrap'] = new Date().getTime();
+	config['timestamp'] = new Date().getTime();
 	return config;
 }, error => {
 	//request error callback
