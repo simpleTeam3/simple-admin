@@ -7,6 +7,7 @@ import store from './store';
 import '~/styles/index.scss';
 
 import Simple from 'simple-ui-for-vue';
+import 'simple-ui-for-vue/dist/styles/simple.css';
 Vue.use(Simple);
 
 Vue.config.productionTip = false
