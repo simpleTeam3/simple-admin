@@ -4,13 +4,31 @@
         <div class="login-box-container">
             <vut-input></vut-input>
             <vut-input type="password"></vut-input>
-            <vut-button type="primary" class="login-btn">登录</vut-button>
+            <vut-button type="primary" class="login-btn" @click="submit">登录</vut-button>
         </div>
     </div>
 </template>
 <script>
+import axios from 'axios';
+import { login } from '~/api/login';
+
 export default {
-    
+    data(){
+        return {
+            username: '',
+            password: ''
+        }
+    },
+    methods: {
+        submit(){
+            // console.log("1");
+            // login({
+            //     username: this.username,
+            //     password: this.password
+            // })
+            axios.get('https://www.jianshu.com/users/dbb4c627f5e5/collections_and_notebooks')
+        }
+    }
 }
 </script>
 <style lang="scss">

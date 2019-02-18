@@ -6,7 +6,7 @@ import { getToken } from '~/utils/getCookie';
 const apiDebug = true;
 
 const service = axios.create({
-	base: process.env.BASE_API,         //	config/dev.env.js中配置地址
+	baseURL: process.env.BASE_API,         //	config/dev.env.js中配置地址
 	timeout: 10000						//	请求超时时间
 })
 
@@ -30,3 +30,5 @@ service.interceptors.response.use(response => {
 	apiDebug && console.log('err' + error);
 	return Promise.reject(error);
 })
+
+export default service;
