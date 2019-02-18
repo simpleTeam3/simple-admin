@@ -15,7 +15,7 @@ export default {
 <style lang="scss">
 .login-box{
     border: 1px solid #fff;
-    padding: 25px 50px;
+    padding: 30px 50px;
     background-color: rgba(233, 255, 255, 0.1)
 }
 .login-box-container{
