@@ -23,7 +23,7 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss">
 .index-login{
-    background-color: #51b881; /* 37495f */
+    background: linear-gradient(#37495f, #51b881); /* 37495f 51b881*/
     height: 100%;
     width: 100%;
     position: absolute;
