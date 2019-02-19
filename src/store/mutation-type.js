@@ -1,0 +1,1 @@
+export const RECODE_HTTP = "recodeHttp";

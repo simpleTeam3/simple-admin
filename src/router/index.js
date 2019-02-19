@@ -9,13 +9,13 @@ Vue.use(Router);
 export default new Router({
 	routes: [
 		{
-			path: '/',
-			name: 'loginLayout',
-			redirect: '/login',
+			path: '/login',
+			name: 'LoginLayout',
+			redirect: '/login/index',
 			component: LoginLayout,
 			children: [
 				{
-					path: 'login',
+					path: 'index',
 					component: () => import ('~/pages/login'),
 					name: '登陆'
 				}

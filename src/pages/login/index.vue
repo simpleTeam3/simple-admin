@@ -21,12 +21,10 @@ export default {
     },
     methods: {
         submit(){
-            // console.log("1");
-            // login({
-            //     username: this.username,
-            //     password: this.password
-            // })
-            axios.get('https://www.jianshu.com/users/dbb4c627f5e5/collections_and_notebooks')
+            login({
+                username: this.username,
+                password: this.password
+            })
         }
     }
 }

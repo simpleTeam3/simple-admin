@@ -32,6 +32,9 @@ export default {
 }
 .fullscreen{
     // background: url("https://images.unsplash.com/photo-1487564149407-9fb3522e2ceb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80");
+    // background: url("https://images.unsplash.com/photo-1548736614-128923fa2a11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2536&q=80");
+    background: url("../assets/photo.jpeg");
+    background-size: cover;
     background-position: 50% 50%;
     height: 100%;
     width: 100%;

@@ -19,7 +19,7 @@ service.interceptors.request.use(config => {
 }, error => {
 	//request error callback
 	if(apiDebug) console.log('err' + error);
-	store.commit('recordHttp', error);
+	store.commit('RECORD_HTTP', error);
 	Promise.reject(error)
 })
 
@@ -28,6 +28,7 @@ service.interceptors.response.use(response => {
 	//response resultCode问题处理
 }, error => {
 	apiDebug && console.log('err' + error);
+	store.commit('RECORD_HTTP', error);
 	return Promise.reject(error);
 })
 
