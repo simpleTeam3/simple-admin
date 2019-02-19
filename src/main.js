@@ -10,6 +10,8 @@ import Simple from 'simple-ui-for-vue';
 import 'simple-ui-for-vue/dist/styles/simple.css';
 Vue.use(Simple);
 
+import '~/router/permission';
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

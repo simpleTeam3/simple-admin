@@ -1,7 +1,7 @@
 import axios from 'axios';
 import store from '~/store';
 import { message } from 'simple-ui-for-vue';
-import { getToken } from '~/utils/getCookie';
+import { getToken } from '~/utils/cookie';
 
 const apiDebug = true;
 
@@ -26,8 +26,9 @@ service.interceptors.request.use(config => {
 //添加响应拦截器
 service.interceptors.response.use(response => {
 	//response resultCode问题处理
+	return response;
 }, error => {
-	apiDebug && console.log('err' + error);
+	apiDebug && console.log('err ' + error);
 	store.commit('RECORD_HTTP', error);
 	return Promise.reject(error);
 })

@@ -3,14 +3,18 @@
  */
 import router from './index';
 import store from '~/store';
-import { getToken } from '~/utils/getCookie';
+import { getToken } from '~/utils/cookie';
 
 const whiteList = ['/login'];   //白名单
 
 router.beforeEach((to, from, next) => {
     if(getToken()) {
-
+        next();
     } else {
-        next({ path: '/login'})
+        if(whiteList.some((item) => to.path.indexOf(item) !== -1)){
+            next();
+        }else{
+            next({ path: '/login'});
+        }
     }
 })

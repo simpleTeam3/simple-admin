@@ -15,16 +15,13 @@ import { login } from '~/api/login';
 export default {
     data(){
         return {
-            username: '',
-            password: ''
+            username: 'admin',
+            password: 'admin'
         }
     },
     methods: {
         submit(){
-            login({
-                username: this.username,
-                password: this.password
-            })
+            this.$store.dispatch('loginByAccount', {username: this.username, password: this.password})
         }
     }
 }
