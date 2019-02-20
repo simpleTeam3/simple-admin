@@ -27,8 +27,8 @@ const store = new Vuex.Store({
 	},
 	actions: {
 		loginByAccount({commit}, userInfo) {
-			login(userInfo).then(response => {
-				const data = response.data.data;
+			return login(userInfo).then(response => {
+				const data = response.data;
 				setToken(data.token);
 				commit('SET_TOKEN', data.token);
 			})

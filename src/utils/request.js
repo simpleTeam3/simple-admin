@@ -26,7 +26,12 @@ service.interceptors.request.use(config => {
 //添加响应拦截器
 service.interceptors.response.use(response => {
 	//response resultCode问题处理
-	return response;
+	const res = response.data;
+	if (res.resultCode != 200){
+		return Promise.reject("api error");
+	}else{
+		return response.data;
+	}
 }, error => {
 	apiDebug && console.log('err ' + error);
 	store.commit('RECORD_HTTP', error);

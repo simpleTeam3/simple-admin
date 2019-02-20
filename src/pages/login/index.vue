@@ -21,7 +21,14 @@ export default {
     },
     methods: {
         submit(){
-            this.$store.dispatch('loginByAccount', {username: this.username, password: this.password})
+            this.$store.dispatch('loginByAccount', {
+                username: this.username,
+                password: this.password
+            }).then(() => {
+                console.log("success")
+            }).catch((error) => {
+                console.log(error);
+            })
         }
     }
 }
