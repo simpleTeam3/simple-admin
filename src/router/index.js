@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router'
 
 import LoginLayout from '~/layout/loginLayout';
+import BasicLayout from '~/layout/basicLayout';
 
 import personalRoutes from './personal';
 
@@ -25,7 +26,15 @@ export default new Router({
 		{
 			path: '/',
 			name: 'center',
-			component: () => import ('~/pages/center')
+			redirect: '/center',
+			description: '首页',
+			component: BasicLayout,
+			children: [
+				{
+					path: 'center',
+					component: () => import ('~/pages/center')
+				}
+			]
 		}
 	].concat(personalRoutes)
 })
