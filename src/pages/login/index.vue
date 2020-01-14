@@ -19,6 +19,11 @@ export default {
             password: 'admin'
         }
     },
+    mounted(){
+        console.log(this);
+        // console.log(store);
+        console.log(this.$store);
+    },
     methods: {
         submit(){
             this.$store.dispatch('loginByAccount', {
